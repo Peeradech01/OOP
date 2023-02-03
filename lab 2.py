@@ -62,6 +62,9 @@ class SinglyLinkedList:
     def delete(self, data):
         start = self.head
         prev = self.head
+        if start.name == data:
+            self.head = self.head.next
+            return
         while start.name != data:
             if start.next == None:
                 print("Cannot delete, %s does not exist." %data)
