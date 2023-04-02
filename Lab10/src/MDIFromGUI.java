@@ -41,29 +41,23 @@ public class MDIFromGUI{
         frame2 = new JInternalFrame("Application 02", true, true, true,true);
         frame3 = new JInternalFrame("Application 03", true, true, true,true);
         
-        frame1.getContentPane().add(new JLabel());
         frame1.setSize(200, 200);
         frame1.setVisible(true);
         
-        frame2.getContentPane().add(new JLabel());
         frame2.setSize(200, 200);
         frame2.setVisible(true);
         
-        frame3.getContentPane().add(new JLabel());
         frame3.setSize(200, 200);
         frame3.setVisible(true);
-        
         
         frame1.setLocation(100, 200);
         frame2.setLocation(500, 100);
         frame3.setLocation(800, 300);
-        
-
+       
         desktopPane.add(frame1);
         desktopPane.add(frame2);
         desktopPane.add(frame3);
         fr.add(desktopPane);
-        
         
         fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fr.setSize(400, 400);
