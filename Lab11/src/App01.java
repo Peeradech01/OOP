@@ -7,8 +7,9 @@ public class App01 implements ActionListener {
     private JPanel p1,p2;
     private JTextField txt1, txt2, txt3;
     private JButton btn1, btn2, btn3, btn4;
- 
+    private Double ans;
     public App01(){
+        
         fr = new JFrame("calculator");
         p1 = new JPanel();
         p2 = new JPanel();
@@ -50,13 +51,17 @@ public class App01 implements ActionListener {
         @Override
     public void actionPerformed(ActionEvent ae) {
         if(ae.getSource().equals(btn1)){
-            System.out.println("btn1");
+            double ans = (int)(Double.parseDouble(txt1.getText())) + (int)(Double.parseDouble(txt2.getText()));
+            txt3.setText(ans+"");
         }else if(ae.getSource().equals(btn2)){
-            System.out.println("btn2");
+            double ans = (int)(Double.parseDouble(txt1.getText())) - (int)(Double.parseDouble(txt2.getText()));
+            txt3.setText(ans+"");
         }else if(ae.getSource().equals(btn3)){
-            System.out.println("btn3");
+            double ans = (int)(Double.parseDouble(txt1.getText())) * (int)(Double.parseDouble(txt2.getText()));
+            txt3.setText(ans+"");
         }else if(ae.getSource().equals(btn4)){
-            System.out.println("btn4");
+            double ans = (int)(Double.parseDouble(txt1.getText())) / (int)(Double.parseDouble(txt2.getText()));
+            txt3.setText(ans+"");
         }
     }
         
