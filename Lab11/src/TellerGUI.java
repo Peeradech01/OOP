@@ -2,7 +2,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class TellerGUI {
+public class TellerGUI implements ActionListener{
     private JFrame fr;
     private JPanel pn1;
     private JPanel pn2;
@@ -15,8 +15,8 @@ public class TellerGUI {
     private JButton bn3;
     private Account account;
     
-    public TellerGUI(){
-        account = new Account(6000, "del");
+    public TellerGUI() {
+        account = new Account(0, "del");
         fr = new JFrame("Teller GUI");
         pn1 = new JPanel();
         pn2 = new JPanel();
@@ -48,7 +48,35 @@ public class TellerGUI {
         fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fr.setSize(250, 190);
         fr.setVisible(true);
+        
+        bn1.addActionListener(this);
+        bn2.addActionListener(this);
     }
     
+    @Override
+    public void actionPerformed(ActionEvent e){
+        if(e.getSource().equals(bn1)){
+            if((Double.parseDouble(tf1.getText()))>= 0){
+                account.setBalance(account.getBalance()+((Double.parseDouble(tf1.getText()))));
+                tf2.setText(account.getBalance()+"");
+                
+            }
+        }
+        
+        else if (e.getSource().equals(bn2)){
+            if((Double.parseDouble(tf1.getText()))>= 0){
+                account.setBalance(account.getBalance()-((Double.parseDouble(tf1.getText()))));
+                tf2.setText(account.getBalance()+"");
+                
+            }       
+        }
+        
+    }
+        
 }
+    
+    
+    
+    
+    
 
