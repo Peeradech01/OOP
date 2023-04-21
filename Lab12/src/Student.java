@@ -1,8 +1,5 @@
-import java.awt.*;
-import javax.swing.*;
-import java.awt.event.*;
-
-public class Student {
+import java.io.*;
+public class Student implements Serializable{
     
     private String name;
     private int ID, money;
