@@ -33,6 +33,7 @@ public class StudentView implements ActionListener, WindowListener {
         deposit_btn.addActionListener(this);
         withdraw_btn.addActionListener(this);
         frame.addWindowListener(this);
+        
         pn1.add(id_lb);
         pn1.add(id_tf);
         pn1.add(name_lb);
@@ -74,9 +75,11 @@ public class StudentView implements ActionListener, WindowListener {
     
     @Override
     public void windowClosing(WindowEvent we) {
-        try {
-            FileOutputStream stream = new FileOutputStream(obj_logs);
+        try(FileOutputStream stream = new FileOutputStream(obj_logs);
             ObjectOutputStream ops = new ObjectOutputStream(stream);
+            ) {
+//            FileOutputStream stream = new FileOutputStream(obj_logs);
+//            ObjectOutputStream ops = new ObjectOutputStream(stream);
             ops.writeObject(std);
         } catch (IOException ex) {
             System.out.println("Error");
@@ -104,6 +107,11 @@ public class StudentView implements ActionListener, WindowListener {
     }
 
     
+    
+    
+    
+    
+    
     @Override
     public void windowClosed(WindowEvent e) {
 //        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
@@ -130,9 +138,7 @@ public class StudentView implements ActionListener, WindowListener {
     }
     
     
-     public void main(String arge[]){
-        new StudentView();
-    }
+
     
     
 }
