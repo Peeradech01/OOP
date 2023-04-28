@@ -50,9 +50,9 @@ public class MDIFromGUI{
         frame3.setSize(200, 200);
         frame3.setVisible(true);
         
-        frame1.setLocation(100, 200);
-        frame2.setLocation(500, 100);
-        frame3.setLocation(800, 300);
+        frame1.setLocation((int) (Math.random() * 800), (int) (Math.random() * 600));
+        frame2.setLocation((int) (Math.random() * 800), (int) (Math.random() * 600));
+        frame3.setLocation((int) (Math.random() * 800), (int) (Math.random() * 600));
        
         desktopPane.add(frame1);
         desktopPane.add(frame2);
